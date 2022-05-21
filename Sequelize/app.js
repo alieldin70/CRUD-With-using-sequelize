@@ -1,0 +1,10 @@
+const express = require('express');
+const { drawtables } = require('./DB/connection');
+require('dotenv').config();
+const app = express();
+const port = process.env.PORT;
+const { userRouter, productRouter } = require('./modules/index.router');
+app.use(express.json());
+app.use(userRouter, productRouter);
+drawtables();
+app.listen(port, () => { console.log(`running...${port}`) });

@@ -1,0 +1,12 @@
+const router = require('express').Router();
+const { addblog } = require('./controller/Addproduct');
+const { deleteblog } = require('./controller/Deleteproduct');
+const { getproductwinfo } = require('./controller/GetAllproducts');
+const { getproductsDprices } = require('./controller/GetproductsDprices');
+const { updateblog } = require('./controller/Updateproduct');
+router.post('/product', addblog);
+router.put('/update product/:id', updateblog);
+router.delete('/product/:id', deleteblog);
+router.get('/product', getproductwinfo);
+router.get('/productp', getproductsDprices);
+module.exports = router;
